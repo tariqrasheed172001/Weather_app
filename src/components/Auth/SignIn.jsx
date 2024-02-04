@@ -16,6 +16,7 @@ function SignIn() {
         navigate("/");
       })
       .catch((error) => {
+        alert(error.message);
         console.log(error.message);
       });
   };

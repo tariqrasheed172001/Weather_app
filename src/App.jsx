@@ -4,8 +4,10 @@ import PageNotFound from "./components/PageNotFound";
 import SignIn from "./components/Auth/SignIn";
 import SignUp from "./components/Auth/SignUp";
 import { Route, Routes } from "react-router-dom";
-import ProtectedHomePage from "./components/AuthProtections/ProtectedHomePage";
-import ProtectedAuth from "./components/AuthProtections/ProtectedAuth";
+import ProtectedHomePage from "./components/RouteProtections/ProtectedHomePage";
+import ProtectedAuth from "./components/RouteProtections/ProtectedAuth";
+import UserTable from "./components/UserTable/UserTable";
+import AddUserForm from "./components/UserTable/AddUserForm";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
 
         <Route element={<ProtectedHomePage />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="user-table" element={<UserTable />} />
+          <Route path="add-user" element={<AddUserForm />} />
         </Route>
         
         <Route element={<ProtectedAuth />}>

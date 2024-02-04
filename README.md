@@ -1,4 +1,4 @@
-# Today's Weather
+# Weather Now
 
 ## Introduction
 

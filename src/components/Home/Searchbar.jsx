@@ -3,9 +3,11 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../../api";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Searchbar = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
+  const navigate = useNavigate();
 
   const loadOptions = async (inputValue) => {
     console.log(inputValue);
@@ -56,6 +58,12 @@ const Searchbar = ({ onSearchChange }) => {
           className="w-full sm:w-60% mx-auto text-black text-xl"
         />
       </div>
+      <button
+        onClick={(e) => navigate('/user-table')}
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Active users
+      </button>
       <button
         onClick={userSignOut}
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

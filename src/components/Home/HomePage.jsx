@@ -55,7 +55,7 @@ function HomePage() {
   }, [lat, lon]);
   console.log(lat, lon);
   return (
-    <div>
+    <div style={{backgroundColor: "#d5d4d4"}}>
       <Searchbar onSearchChange={handleOnSearchChange} />
       <div className="w-full h-screen md:flex items-center justify-between md:gap-4">
         {currentWeather && <Today data={currentWeather} />}

@@ -45,12 +45,20 @@ const ForecastItems = ({ item, idx }) => {
                   {Math.round(item.main.temp_max)}°C /{" "}
                   {Math.round(item.main.temp_min)}°C
                 </label>
-                <label className="text-xl hidden sm:block">{item.weather[0].description}</label>
-                {arrow ? 
-                <AiOutlineArrowUp size={30} className="animate-bounce bg-slate-200 rounded-full p-2"/>
-                : 
-                <AiOutlineArrowDown size={30} className="animate-bounce bg-slate-200 rounded-full p-2"/> 
-                }
+                <label className="text-xl hidden sm:block">
+                  {item.weather[0].description}
+                </label>
+                {arrow ? (
+                  <AiOutlineArrowUp
+                    size={30}
+                    className="animate-bounce bg-slate-200 rounded-full p-2"
+                  />
+                ) : (
+                  <AiOutlineArrowDown
+                    size={30}
+                    className="animate-bounce bg-slate-200 rounded-full p-2"
+                  />
+                )}
               </div>
             </AccordionItemButton>
           </AccordionItemHeading>

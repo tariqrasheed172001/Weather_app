@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom';
-import SignIn from '../Auth/SignIn';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../firebase';
+import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import SignIn from "../Auth/SignIn";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase";
 
 function ProtectedHomePage() {
   const [authUser, setAuthUser] = useState(null);
@@ -21,9 +21,7 @@ function ProtectedHomePage() {
     };
   }, []);
 
-  return (
-    <div>{authUser? <Outlet /> : <SignIn /> }</div>
-  )
+  return <div>{authUser ? <Outlet /> : <SignIn />}</div>;
 }
 
-export default ProtectedHomePage
+export default ProtectedHomePage;
